@@ -30,7 +30,7 @@
             </h1>
             @guest
                 <p class="text-center">
-                    Você pode escrever a sua mensagem do dia após entrar na sua conta
+                    Você pode escrever a sua mensagem após entrar na sua conta
                 </p>
             @endguest
             <div class="flex max-md:flex-col items-center md:gap-4 mt-2">

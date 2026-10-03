@@ -19,9 +19,17 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
+            'google_id' => (string) fake()->unique()->numberBetween(),
+            'name' => $name = fake()->unique()->firstName(),
+            'handle' => Str::slug($name),
             'remember_token' => Str::random(10),
         ];
+    }
+
+    public function withHandle(string $handle): Factory
+    {
+        return $this->state(
+            fn(array $attributes) => ['handle' => Str::slug($handle)]
+        );
     }
 }

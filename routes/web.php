@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
@@ -16,3 +17,5 @@ Route::prefix('/auth')->name('auth.')->group(function() {
         ->middleware('auth')
         ->name('logout');
 });
+
+Route::get('/{user:handle}', [ProfileController::class, 'index'])->name('profile.index');

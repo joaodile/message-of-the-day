@@ -2,24 +2,9 @@
     <x-slot:page-title>Mensagem do Dia | joaodile.dev</x-slot>
     
     <div class="container px-2 sm:mx-auto min-h-screen flex flex-col gap-8">
-        <header class="mt-4 flex justify-end">
-            <nav>
-                <ul class="flex items-stretch gap-2">
-                    <li>
-                        <a href="#" class="block p-1 bg-yellow-300 border-4 border-transparent border-b-black border-r-black hover:-translate-y-1">
-                            <svg class="size-9" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M14 20h2v2H4v-2h8v-6h2v6ZM4 20H2V10h2v10Zm14 0h-2v-2h2v2Zm2-2h-2v-2h2v2Zm2-2h-2v-2h-6v-2h6V4h2v12ZM6 4h2v2H6v2H4V6H2V4h2V2h2v2Zm14 0H10V2h10v2Z"></path></svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="block p-1 bg-yellow-300 border-4 border-transparent border-b-black border-r-black hover:-translate-y-1">
-                            <svg class="size-9" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M6 22H4v-4h2v4Zm14 0h-2v-4h2v4ZM8 18H6v-2h2v2Zm10 0h-2v-2h2v2Zm-2-2H8v-2h8v2Zm-1-4H9v-2h6v2Zm-6-2H7V4h2v6Zm8 0h-2V4h2v6Zm-2-6H9V2h6v2Z"/></svg>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <x-header />
 
-        <main class="grow flex items-center justify-center flex-col gap-1 max-md:max-w-sm mx-auto min-h-[50vh]">
+        <main class="grow flex items-center justify-center flex-col gap-1 max-md:max-w-sm mx-auto max-sm:min-h-[70vh]">
             <h1 class="font-title text-center text-4xl md:text-6xl">
                 @auth
                     Olá, {{ auth()->user()->name }}!
@@ -53,41 +38,6 @@
             </div>
         </main>
 
-        <footer class="py-4 border-t border-black text-black/80 flex max-lg:flex-col gap-6 justify-center lg:justify-between">
-            <section>
-                <h1 class="text-2xl sm:text-4xl font-title">Mensagem do dia</h1>
-                <p class="italic text-sm">Alegre o dia de outra pessoa com uma mensagem "inspiradora".</p>
-                <small class="mt-3 block">
-                    Um projeto de estudos feito por <a class="underline" href="https://github.com/joaodile" target="_blank" rel="noopener noreferrer">João Dile.</a>
-                </small>
-            </section>
-            <div class="flex flex-col gap-6 sm:flex-row sm:gap-24">
-                <section>
-                    <h1 class="font-medium text-lg">Informações legais</h1>
-                    <ul class="mt-1 space-y-0.5">
-                        <li>
-                            <a class="hover:underline" href="#">Termos de Uso</a>
-                        </li>
-                        <li>
-                            <a class="hover:underline" href="#">Políticas de Privacidade</a>
-                        </li>
-                        <li>
-                            <a class="hover:underline" href="#">LGPD</a>
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h1 class="font-medium text-lg">Para nerds</h1>
-                    <ul class="mt-1 space-y-0.5">
-                        <li>
-                            <a class="hover:underline" href="https://github.com/joaodile" target="_blank" rel="noopener noreferrer">João Dile</a>
-                        </li>
-                        <li>
-                            <a class="hover:underline" href="https://github.com/joaodile/message-of-the-day" target="_blank" rel="noopener noreferrer">Código Fonte</a>
-                        </li>
-                    </ul>
-                </section>
-            </div>
-        </footer>
+        <x-footer />
     </div>
 </x-layout>
